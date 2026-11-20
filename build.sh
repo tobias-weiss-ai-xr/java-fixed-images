@@ -15,6 +15,7 @@ TEMURIN_17_LATEST="https://api.adoptium.net/v3/binary/latest/17/ga/linux/x64/jdk
 
 imgs=(
   "gromox-jdk:17.0.21|gromox-jdk"
+  "appsuite-middleware:8.54.333-fixed|appsuite-mw"
 )
 
 if [ "$MODE" = push ]; then
