@@ -1,0 +1,24 @@
+name: build-java-fixed-images
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["build.sh", "**/Dockerfile", ".github/workflows/build.yml"]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      REGISTRY: ghcr.io/tobias-weiss-ai-xr/java-fixed-images
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and push
+        run: bash build.sh "$REGISTRY" && bash build.sh "$REGISTRY" push
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
