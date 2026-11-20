@@ -14,7 +14,11 @@
 # Upstream tracking: revert to the stock grommunio image once their Leap 16
 # java-17-openjdk package reaches 17.0.21+; pin whatever you deploy by digest.
 
-ARG GROMOX_BASE=container.grommunio.com/community/gromox-core:2026.11-202611200110@sha256:9de818a5aaab1dc0640b525ab293416659a479ba86f9e6640df493115a7f5b93
+# Base default = the php-fixed gromox-core image (PHP 8.4.28, 2026-11 critical
+# release), so the published gromox-jdk carries BOTH the PHP and the JDK fix in
+# one image. Stock grommunio base (php 8.4.27 rpm lag) for upstream tracking:
+#   container.grommunio.com/community/gromox-core:2026.11-202611200110@sha256:9de818a5aaab1dc0640b525ab293416659a479ba86f9e6640df493115a7f5b93
+ARG GROMOX_BASE=ghcr.io/tobias-weiss-ai-xr/php-fixed-images/gromox-core:8.4.28-20261120
 FROM ${GROMOX_BASE}
 
 ARG TEMURIN_VER=17.0.21.1

@@ -19,7 +19,7 @@ Java runtime (engine/JDK or jar files) with a patched build, ABI-compatible.
 
 | Image | Contents |
 |---|---|
-| `ghcr.io/tobias-weiss-ai-xr/java-fixed-images/gromox-jdk:17.0.21` | grommunio gromox-core with the JDK replaced by Temurin **17.0.21** (ships 17.0.20.1) |
+| `ghcr.io/tobias-weiss-ai-xr/java-fixed-images/gromox-jdk:17.0.21` | grommunio gromox-core with the JDK replaced by Temurin **17.0.21.1** (ships 17.0.20.1). Base = the `php-fixed-images/gromox-core:8.4.28` image, so it carries **both** the PHP 8.4.28 engine fix and the JDK CPU in one image |
 | *(planned)* `xwiki-jarfix:18.9.0` | XWiki 18.9.0 with opennlp-tools 1.9.5 / solr-core 9.10.1 / jetty fixed jars swapped into `WEB-INF/lib` |
 | *(planned)* `appsuite-mw` | openEduSuite appsuite-middleware with openjdk 25.0.5.1 (wolfi) |
 
